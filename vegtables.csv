@@ -1,0 +1,18 @@
+Name,Count,UPC,CookedState,IsRoot,IsPeeled,Color
+corn,12,4078,Roasted,FALSE,FALSE,yellow
+tomato,4,4064,Raw,FALSE,FALSE,red
+cucumber,11,4062,Raw,FALSE,FALSE,green
+carrot,10,4562,Raw,TRUE,FALSE,orange
+radish,13,4089,Raw,TRUE,FALSE,red
+peas,14,4674,Steamed,FALSE,FALSE,green
+turnip,12,4811,Boiled,TRUE,FALSE,purple
+russet potato,18,4725,Fried,TRUE,FALSE,brown
+broccoli,15,4060,Steamed,FALSE,FALSE,green
+zucchini,7,4067,Raw,FALSE,FALSE,green
+spinach,4,4090,Raw,FALSE,FALSE,green
+cauliflower,7,4572,Steamed,FALSE,FALSE,white
+habanero pepper,17,3125,Raw,FALSE,FALSE,orange
+Anaheim pepper,16,4677,Raw,FALSE,FALSE,green
+red bell pepper,19,4088,Sauteed,FALSE,FALSE,red
+eggplant,6,4081,Fried,FALSE,FALSE,purple
+endive,2,4604,Raw,FALSE,FALSE,green
