@@ -257,5 +257,22 @@ Get-PSProvider | Select name, Capabilities
 #Exercise 8
 #How would you find code signing certificates installed on your computer?
 
+Get-ChildItem -Path Cert:  -CodeSigningCert -Recurse
 
 
+#Exercise 9
+#Turn %PATH% into a list of directories.
+
+$env:path -split ";"
+
+
+#Exercise 10
+#Create a new registry key under HKEY_CURRENT_USER called ‘PowerShell Training’. Then create
+#values under it for your name, computername, the current date and PowerShell version. You should
+#be able to get all of these values from PowerShell.
+
+New-Item -Path HKCU: -Name 'PowerShell Training'
+Set-ItemProperty -Path 'HKCU:\PowerShell Training' -Name Name -Value $env:USERNAME
+Set-ItemProperty -Path 'HKCU:\PowerShell Training' -Name Computername -Value $env:COMPUTERNAME
+Set-ItemProperty -Path 'HKCU:\PowerShell Training' -Name Date -Value (Get-Date).ToShortDateString()
+Get-item 'HKCU:\PowerShell Training'
