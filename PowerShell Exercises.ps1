@@ -347,16 +347,17 @@ Get-ChildItem Cert: -Recurse -ExpiringInDays 0  | Select-Object FriendlyName, No
 #Get a unique list of commands run from your command history. Bonus points if you can filter out
 #any help commands.
 
-
-
+Get-History | Where-Object {$_.commandline -notmatch "help"} | Sort-Object commandline `
+| Get-Unique 
+ 
 
 #Exercise 23
 #Using the DNSClientCache cmdlet, export all records other than AAAA to a CSV file. Your export
 #should include the computername, the entry, its type, the time to live, and its data. Instead of a
 #comma, use a semicolon as the separator.
 
-
-
+ 
+Get-DnsClientCache -type A, CNAME, PTR
 
 
 #Exercise 24
