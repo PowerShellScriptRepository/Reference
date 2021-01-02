@@ -276,3 +276,36 @@ Set-ItemProperty -Path 'HKCU:\PowerShell Training' -Name Name -Value $env:USERNA
 Set-ItemProperty -Path 'HKCU:\PowerShell Training' -Name Computername -Value $env:COMPUTERNAME
 Set-ItemProperty -Path 'HKCU:\PowerShell Training' -Name Date -Value (Get-Date).ToShortDateString()
 Get-item 'HKCU:\PowerShell Training'
+
+#Exercise 11
+#Using PowerShell, delete the PowerShell Training registry setting you created in the previous
+#exercise.
+
+Remove-Item -Path 'HKCU:\PowerShell Training'
+
+#Exercise 12
+#Create a PSDrive called Download for the Downloads directory under your user directory.
+
+New-PSDrive -Name Download -PSProvider FileSystem -Root "C:\users\LocalAdmin\Downloads"
+ 
+#Exercise 13
+#Get all functions that don’t support cmdletbinding.
+
+Get-Command -CommandType Function |  Where-Object {$_.CmdletBinding -eq  $false}
+
+#Exercise 14
+#Get the default WSMan port values.
+
+Get-ChildItem WSMan:\localhost\Service\DefaultPorts
+
+#Exercise 15
+#Set the Digest Authentication setting for WSMan to $False. If it is already False then set it to True.
+#Revert the change if you need to.
+
+Get-ChildItem WSMan:\localhost\Client\Auth
+Set-Item -Path WSMan:\localhost\Client\Auth\Digest -Value $false
+
+#Exercise 16
+#Create a new environmental variable in PowerShell called Pictures that points to your Pictures
+#folder. Does this setting persist?
+
