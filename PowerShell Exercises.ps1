@@ -321,3 +321,53 @@ $env:userprofile\pictures
 #Exercise 18
 #Create a backup copy of your user environmental variables found in the registry to EnvBackup.
 
+Copy-Item HKCU:\Environment -Destination HKCU:\EnvBackup -PassThru
+
+#Exercise 19
+#Delete the persistent Pictures environmental variable you created earlier and recreate it using
+#%USERPROFILE% as an expandable variable.
+
+Remove-Item -Path env:pictures
+
+#Exercise 20
+#Export your user specific persistent environment settings to a CSV file that you can use outside of
+#PowerShell.
+
+
+Get-ChildItem env: | Export-Csv -Path C:\powershell\env.csv
+
+
+#Exercise 21
+#List all certificates that have expired showing the certificate’s friendly name, when it expired, the
+#issuer and path.
+
+Get-ChildItem Cert: -Recurse -ExpiringInDays 0  | Select-Object FriendlyName, NotAfter,  @{name='path'; expression= {Join-Path -Path cert: -ChildPath (Convert-Path $_.pspath)}}, Issuer
+
+#Exercise 22
+#Get a unique list of commands run from your command history. Bonus points if you can filter out
+#any help commands.
+
+
+
+
+#Exercise 23
+#Using the DNSClientCache cmdlet, export all records other than AAAA to a CSV file. Your export
+#should include the computername, the entry, its type, the time to live, and its data. Instead of a
+#comma, use a semicolon as the separator.
+
+
+
+#Exercise 24
+#Using your birthday, write an object to the pipeline that shows your birthday (and time if you know
+#or want to guess something), your current age in years as a round number, the timespan you’ve been
+#alive, the day of the week you were born, and what day you can retire at age 65. Other than your
+#birthday, you should be able to calculate everything.
+
+
+
+
+#Exercise 25
+#Assuming you have a few third party applications or utilities running, prepare a formatted report
+#of all processes that are not from Microsoft and copy to the clipboard. Paste into Notepad to verify.
+
+
