@@ -309,3 +309,15 @@ Set-Item -Path WSMan:\localhost\Client\Auth\Digest -Value $false
 #Create a new environmental variable in PowerShell called Pictures that points to your Pictures
 #folder. Does this setting persist?
 
+New-Item -Path env: -Name Pictures -Value $env:userprofile\pictures
+
+#Exercise 17
+#Make a persistent environmental variable called Pictures that points to your Pictures folder. Verify
+#it in PowerShell
+
+New-ItemProperty -Path HKCU:\Environment -Name Pictures -Value `
+$env:userprofile\pictures
+
+#Exercise 18
+#Create a backup copy of your user environmental variables found in the registry to EnvBackup.
+
