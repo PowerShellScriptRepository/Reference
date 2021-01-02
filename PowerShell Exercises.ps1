@@ -357,6 +357,8 @@ Get-ChildItem Cert: -Recurse -ExpiringInDays 0  | Select-Object FriendlyName, No
 
 
 
+
+
 #Exercise 24
 #Using your birthday, write an object to the pipeline that shows your birthday (and time if you know
 #or want to guess something), your current age in years as a round number, the timespan you’ve been
