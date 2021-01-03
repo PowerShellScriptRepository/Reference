@@ -401,20 +401,31 @@ $array[4]
 #Initialize an empty array. Add 10 random numbers between 10 and 100. Finally, get the sum total of
 #all numbers in the array.
 
+$array = @()
+1..10 | ForEach-Object {$array +=(Get-Random -Minimum 1 -Maximum 100)}
+$array  | measure-object -sum
+ 
 
 #Exercise 3
 #Create a hashtable with keys for your computername, PowerShell version and the current date
 #(without the time). Don’t use any hardcoded values.
 
+$Exercise3 = @{
+                'Computername' = $env:computername
+                'version' = ($PSVersionTable).psversion
+                'Date' = (Get-Date).ToShortDateString()             
+              }
+$Exercise3
 
-
+ 
 #Exercise 4
 #Using the hashtable from the previous exercise, add a key for Name using the values of Bits and
 #WinRM. Remove the Date and PowerShell version keys. Finally, splat the hashtable to Get-Service.
 
-
-
-
+$Exercise3.Add( 'name', ("bits", "WINRM"))
+$Exercise3.Remove('version')
+$Exercise3.Remove('Date')
+Get-Service @exercise3 
 
 #Exercise 5
 #Create an ordered hashtable with keys for your computername, all the running processes, the top 5
