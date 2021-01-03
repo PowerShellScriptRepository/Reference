@@ -392,7 +392,10 @@ Get-Process | Where-Object {$_.Company -notlike '*Microsoft*'}
 #Exercise 1
 Create an array of the numbers 1 to 20 and then get the 5th element of the array
 
-$array = 1 .. 20 
+
+$array = 1 .. 20
+$array[4]
+
 
 #Exercise 2
 #Initialize an empty array. Add 10 random numbers between 10 and 100. Finally, get the sum total of
