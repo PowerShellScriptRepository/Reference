@@ -366,11 +366,203 @@ Get-DnsClientCache -type A, CNAME, PTR
 #alive, the day of the week you were born, and what day you can retire at age 65. Other than your
 #birthday, you should be able to calculate everything.
 
+$properties = @{
+
+                 'DOB'        = $DOB      = 1
+                 'Age'        = $Age      = 2                   
+                 'TimeSpan'   = $TimeSpan = 3
+                 'Retire'     = $Retire   = 4 
+
+                        }
+
+$Exercise24 = New-Object -TypeName psobject -Property $Properties   
+
+ 
+#Exercise 25
+#Assuming you have a few third party applications or utilities running, prepare a formatted report
+#of all processes that are not from Microsoft and copy to the clipboard. Paste into Notepad to verify.
+
+
+Get-Process | Where-Object {$_.Company -notlike '*Microsoft*'}    
+
+
+#Part 3 Exercises
+##################
+
+#Exercise 1
+Create an array of the numbers 1 to 20 and then get the 5th element of the array
+
+$array = 1 .. 20 
+
+#Exercise 2
+#Initialize an empty array. Add 10 random numbers between 10 and 100. Finally, get the sum total of
+#all numbers in the array.
+
+
+#Exercise 3
+#Create a hashtable with keys for your computername, PowerShell version and the current date
+#(without the time). Don’t use any hardcoded values.
+
+
+
+#Exercise 4
+#Using the hashtable from the previous exercise, add a key for Name using the values of Bits and
+#WinRM. Remove the Date and PowerShell version keys. Finally, splat the hashtable to Get-Service.
+
+
+
+
+
+#Exercise 5
+#Create an ordered hashtable with keys for your computername, all the running processes, the top 5
+#processes using the most working set and the total size of your %TEMP% folder in bytes. Complete
+#the exercise by creating a custom object from the hashtable.
+
+
+
+
+
+#Exercise 6
+#Recreate the hashtable from the previous exercise, but this time create a custom object at the same
+#time.
+
+
+
+
+
+#Exercise 7
+#Get all event logs on your computer that have entries and show the log name, maximum size, the
+#total number of entries, and a property called Computername to reflect the computer name.
+
+
+
+#Exercise 8
+#Recursively go through all file in %TEMP%, or a directory of your choice. The result of your
+#PowerShell expression should show the number of files per file extension and their total size in
+#bytes.
+
+
+
+#Exercise 9
+#Create an array of letters A through E. Get a random item from the array and assign it to $X. Then
+#create a PowerShell construct that displays “alpha”,”bravo”,”charlie”,”delta”,”echo” based on the value
+#of X.
+
+
+
+
+#Exercise 10
+#Take the string “PowerShell Forever” and display it reversed.
+
+
+
+
+#Exercise 11
+#Create a hashtable of services based on their startup type.
+
+
+
+#Exercise 12
+#Using the hashtable you created in the previous exercise, get the display name of the last disabled
+#service.
+
+
+
+
+#Exercise 13
+#Get all the even numbers between 1 and 50.
+
+
+
+
+#Exercise 14
+#Starting with $i equal to 0, loop 5 times, each time incrementing $i by 5. At the end, does $i equal
+#25?
+
+
+
+
+#Exercise 15
+#Display the top 25 processes that have been running the longest. Include the process ID, process
+#name, start time, how long it has been running and path.
+
+
+
+#Exercise 16
+#Get 25 random numbers between 10 and 100. Multiply each one by 3 then get the total sum of these
+#numbers, their average, the largest number and the smallest.
+
+
+
+
+#Exercise 17
+#Create these aliases:
+#• np (notepad.exe)
+#• tx (tzutil.exe)
+#• ct (control.exe)
+#Export them to a json file. Delete the new aliases you just created and recreate them from the json
+#file.
+
+
+
+#Exercise 18
+#Find all files in %TEMP%, or a folder of your choice, that are either less than 100 bytes or greater than
+#1 megabyte.
+
+
+
+
+
+#Exercise 19
+#Take the output from the previous exercise and save it as a standard XML file in UTF-8 format. The
+#filename should be in %TEMP%, and include a datetime like YearMonthDay and the computername.
+
+
+
+
+#Exercise 20
+#Using Invoke-RestMethod, get the latest RSS entries from https://jdhitsolutions.com/blog/feed and
+#display the title, link, and when it was published, as a date time value, in a grid view. For bonus
+#points, see if you can include a comma separated list of category names.
+
+
+
+#Exercise 21
+#Using the previous solution as a starting point, select a single entry from Out-Gridview and open
+#the link in your web browser.
+
+
+
+
+#Exercise 22
+#Get a unique list of commands run from your command history. Bonus points if you can filter out
+#any help commands.
+
+
+
+
+
+#Exercise 23
+#Using the DNSClientCache cmdlet, export all records other than AAAA to a CSV file. Your export
+#should include the computername, the entry, its type, the time to live, and its data. Instead of a
+#comma, use a semicolon as the separator.
+
+
+
+
+#Exercise 24
+#Using your birthday, write an object to the pipeline that shows your birthday (and time if you know
+#or want to guess something), your current age in years as a round number, the timespan you’ve been
+#alive, the day of the week you were born, and what day you can retire at age 65. Other than your
+#birthday, you should be able to calculate everything.
+
 
 
 
 #Exercise 25
 #Assuming you have a few third party applications or utilities running, prepare a formatted report
 #of all processes that are not from Microsoft and copy to the clipboard. Paste into Notepad to verify.
+
+
 
 
